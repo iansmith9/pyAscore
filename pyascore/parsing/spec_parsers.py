@@ -86,9 +86,13 @@ class MzMLExtractor(SpectraExtractor):
             precursor_list = self.scan["precursorList"]
             nprecursors = precursor_list["count"]
             if nprecursors > 1:
-                 raise ValueError("Multiple precursors not supported at this time")
-            
-            ion_dict = precursor_list["precursor"][0]["selectedIonList"]["selectedIon"][0]
+                 #raise ValueError("Multiple precursors not supported at this time")                
+                 #val = len(s["precursorList"]["precursor"])
+                 index_val = len(precursor_list["precursor"]) - 1
+                 ion_dict = precursor_list["precursor"][index_val]['selectedIonList']['selectedIon'][0]
+                    
+            else:
+                ion_dict = precursor_list["precursor"][0]["selectedIonList"]["selectedIon"][0]
             return ion_dict["selected ion m/z"], ion_dict["charge state"]
 
         except KeyError:
