@@ -8,8 +8,9 @@ from pyteomics.pepxml import PepXML
 from pyteomics import mass
 
 # Constants
-STD_AA_MASS = mass.std_aa_mass
-STD_AA_MASS['B'] = 160.03064878471
+STD_AA_MASS2 = mass.std_aa_mass
+STD_AA_MASS2['B'] = 160.03064878471
+STD_AA_MASS = STD_AA_MASS2
 
 # In case a set of custom mods is not supplied
 COMMON_MODS = {"n": 42.010565,
