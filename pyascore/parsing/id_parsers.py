@@ -9,6 +9,7 @@ from pyteomics import mass
 
 # Constants
 STD_AA_MASS = mass.std_aa_mass
+STD_AA_MASS['B'] = 160.03064878471
 
 # In case a set of custom mods is not supplied
 COMMON_MODS = {"n": 42.010565,
